@@ -1,0 +1,858 @@
+[
+    {
+        "codice": "MNG-001",
+        "nome_file": "3 500.jpg",
+        "percorso_originale": "3 500.jpg",
+        "thumb_web": "immagini_web/3 500_ts.jpg",
+        "zoom_web": "immagini_web/3 500.jpg",
+        "url_pubblico": "https://Annalisabetti.github.io/adulto/immagini_web/3%20500.jpg"
+    },
+    {
+        "codice": "MNG-002",
+        "nome_file": "4 robot nero.jpg",
+        "percorso_originale": "4 robot nero.jpg",
+        "thumb_web": "immagini_web/4 robot nero_ts.jpg",
+        "zoom_web": "immagini_web/4 robot nero.jpg",
+        "url_pubblico": "https://Annalisabetti.github.io/adulto/immagini_web/4%20robot%20nero.jpg"
+    },
+    {
+        "codice": "MNG-003",
+        "nome_file": "4 robot.jpg",
+        "percorso_originale": "4 robot.jpg",
+        "thumb_web": "immagini_web/4 robot_ts.jpg",
+        "zoom_web": "immagini_web/4 robot.jpg",
+        "url_pubblico": "https://Annalisabetti.github.io/adulto/immagini_web/4%20robot.jpg"
+    },
+    {
+        "codice": "MNG-004",
+        "nome_file": "500 gialla.jpg",
+        "percorso_originale": "500 gialla.jpg",
+        "thumb_web": "immagini_web/500 gialla_ts.jpg",
+        "zoom_web": "immagini_web/500 gialla.jpg",
+        "url_pubblico": "https://Annalisabetti.github.io/adulto/immagini_web/500%20gialla.jpg"
+    },
+    {
+        "codice": "MNG-005",
+        "nome_file": "ARRIVA LUI.jpg",
+        "percorso_originale": "ARRIVA LUI.jpg",
+        "thumb_web": "immagini_web/ARRIVA LUI_ts.jpg",
+        "zoom_web": "immagini_web/ARRIVA LUI.jpg",
+        "url_pubblico": "https://Annalisabetti.github.io/adulto/immagini_web/ARRIVA%20LUI.jpg"
+    },
+    {
+        "codice": "MNG-006",
+        "nome_file": "ASPETTA CHE TI MOSTRO.jpg",
+        "percorso_originale": "ASPETTA CHE TI MOSTRO.jpg",
+        "thumb_web": "immagini_web/ASPETTA CHE TI MOSTRO_ts.jpg",
+        "zoom_web": "immagini_web/ASPETTA CHE TI MOSTRO.jpg",
+        "url_pubblico": "https://Annalisabetti.github.io/adulto/immagini_web/ASPETTA%20CHE%20TI%20MOSTRO.jpg"
+    },
+    {
+        "codice": "MNG-007",
+        "nome_file": "ASSASSINS BIANCO NERO.jpg",
+        "percorso_originale": "ASSASSINS BIANCO NERO.jpg",
+        "thumb_web": "immagini_web/ASSASSINS BIANCO NERO_ts.jpg",
+        "zoom_web": "immagini_web/ASSASSINS BIANCO NERO.jpg",
+        "url_pubblico": "https://Annalisabetti.github.io/adulto/immagini_web/ASSASSINS%20BIANCO%20NERO.jpg"
+    },
+    {
+        "codice": "MNG-008",
+        "nome_file": "ASSASSINS NUOVO nero.jpg",
+        "percorso_originale": "ASSASSINS NUOVO nero.jpg",
+        "thumb_web": "immagini_web/ASSASSINS NUOVO nero_ts.jpg",
+        "zoom_web": "immagini_web/ASSASSINS NUOVO nero.jpg",
+        "url_pubblico": "https://Annalisabetti.github.io/adulto/immagini_web/ASSASSINS%20NUOVO%20nero.jpg"
+    },
+    {
+        "codice": "MNG-009",
+        "nome_file": "ASSASSINS NUOVO.jpg",
+        "percorso_originale": "ASSASSINS NUOVO.jpg",
+        "thumb_web": "immagini_web/ASSASSINS NUOVO_ts.jpg",
+        "zoom_web": "immagini_web/ASSASSINS NUOVO.jpg",
+        "url_pubblico": "https://Annalisabetti.github.io/adulto/immagini_web/ASSASSINS%20NUOVO.jpg"
+    },
+    {
+        "codice": "MNG-010",
+        "nome_file": "BATMAN BLU.jpg",
+        "percorso_originale": "BATMAN BLU.jpg",
+        "thumb_web": "immagini_web/BATMAN BLU_ts.jpg",
+        "zoom_web": "immagini_web/BATMAN BLU.jpg",
+        "url_pubblico": "https://Annalisabetti.github.io/adulto/immagini_web/BATMAN%20BLU.jpg"
+    },
+    {
+        "codice": "MNG-011",
+        "nome_file": "batman logo.jpg",
+        "percorso_originale": "batman logo.jpg",
+        "thumb_web": "immagini_web/batman logo_ts.jpg",
+        "zoom_web": "immagini_web/batman logo.jpg",
+        "url_pubblico": "https://Annalisabetti.github.io/adulto/immagini_web/batman%20logo.jpg"
+    },
+    {
+        "codice": "MNG-012",
+        "nome_file": "BATMAN MATITA.jpg",
+        "percorso_originale": "BATMAN MATITA.jpg",
+        "thumb_web": "immagini_web/BATMAN MATITA_ts.jpg",
+        "zoom_web": "immagini_web/BATMAN MATITA.jpg",
+        "url_pubblico": "https://Annalisabetti.github.io/adulto/immagini_web/BATMAN%20MATITA.jpg"
+    },
+    {
+        "codice": "MNG-013",
+        "nome_file": "BATMAN ROSSO.jpg",
+        "percorso_originale": "BATMAN ROSSO.jpg",
+        "thumb_web": "immagini_web/BATMAN ROSSO_ts.jpg",
+        "zoom_web": "immagini_web/BATMAN ROSSO.jpg",
+        "url_pubblico": "https://Annalisabetti.github.io/adulto/immagini_web/BATMAN%20ROSSO.jpg"
+    },
+    {
+        "codice": "MNG-014",
+        "nome_file": "BETTER CALL.jpg",
+        "percorso_originale": "BETTER CALL.jpg",
+        "thumb_web": "immagini_web/BETTER CALL_ts.jpg",
+        "zoom_web": "immagini_web/BETTER CALL.jpg",
+        "url_pubblico": "https://Annalisabetti.github.io/adulto/immagini_web/BETTER%20CALL.jpg"
+    },
+    {
+        "codice": "MNG-015",
+        "nome_file": "biker heroes.jpg",
+        "percorso_originale": "biker heroes.jpg",
+        "thumb_web": "immagini_web/biker heroes_ts.jpg",
+        "zoom_web": "immagini_web/biker heroes.jpg",
+        "url_pubblico": "https://Annalisabetti.github.io/adulto/immagini_web/biker%20heroes.jpg"
+    },
+    {
+        "codice": "MNG-016",
+        "nome_file": "BREAKING IN PIEDI.jpg",
+        "percorso_originale": "BREAKING IN PIEDI.jpg",
+        "thumb_web": "immagini_web/BREAKING IN PIEDI_ts.jpg",
+        "zoom_web": "immagini_web/BREAKING IN PIEDI.jpg",
+        "url_pubblico": "https://Annalisabetti.github.io/adulto/immagini_web/BREAKING%20IN%20PIEDI.jpg"
+    },
+    {
+        "codice": "MNG-017",
+        "nome_file": "Bud 4  FACCE X NERO.jpg",
+        "percorso_originale": "Bud 4  FACCE X NERO.jpg",
+        "thumb_web": "immagini_web/Bud 4  FACCE X NERO_ts.jpg",
+        "zoom_web": "immagini_web/Bud 4  FACCE X NERO.jpg",
+        "url_pubblico": "https://Annalisabetti.github.io/adulto/immagini_web/Bud%204%20%20FACCE%20X%20NERO.jpg"
+    },
+    {
+        "codice": "MNG-018",
+        "nome_file": "Bud 4 facce.jpg",
+        "percorso_originale": "Bud 4 facce.jpg",
+        "thumb_web": "immagini_web/Bud 4 facce_ts.jpg",
+        "zoom_web": "immagini_web/Bud 4 facce.jpg",
+        "url_pubblico": "https://Annalisabetti.github.io/adulto/immagini_web/Bud%204%20facce.jpg"
+    },
+    {
+        "codice": "MNG-019",
+        "nome_file": "Bud amaca.jpg",
+        "percorso_originale": "Bud amaca.jpg",
+        "thumb_web": "immagini_web/Bud amaca_ts.jpg",
+        "zoom_web": "immagini_web/Bud amaca.jpg",
+        "url_pubblico": "https://Annalisabetti.github.io/adulto/immagini_web/Bud%20amaca.jpg"
+    },
+    {
+        "codice": "MNG-020",
+        "nome_file": "Bud Bana joe.jpg",
+        "percorso_originale": "Bud Bana joe.jpg",
+        "thumb_web": "immagini_web/Bud Bana joe_ts.jpg",
+        "zoom_web": "immagini_web/Bud Bana joe.jpg",
+        "url_pubblico": "https://Annalisabetti.github.io/adulto/immagini_web/Bud%20Bana%20joe.jpg"
+    },
+    {
+        "codice": "MNG-021",
+        "nome_file": "Bud bombetta.jpg",
+        "percorso_originale": "Bud bombetta.jpg",
+        "thumb_web": "immagini_web/Bud bombetta_ts.jpg",
+        "zoom_web": "immagini_web/Bud bombetta.jpg",
+        "url_pubblico": "https://Annalisabetti.github.io/adulto/immagini_web/Bud%20bombetta.jpg"
+    },
+    {
+        "codice": "MNG-022",
+        "nome_file": "Bud buldozer.jpg",
+        "percorso_originale": "Bud buldozer.jpg",
+        "thumb_web": "immagini_web/Bud buldozer_ts.jpg",
+        "zoom_web": "immagini_web/Bud buldozer.jpg",
+        "url_pubblico": "https://Annalisabetti.github.io/adulto/immagini_web/Bud%20buldozer.jpg"
+    },
+    {
+        "codice": "MNG-023",
+        "nome_file": "Bud cavalli legends.jpg",
+        "percorso_originale": "Bud cavalli legends.jpg",
+        "thumb_web": "immagini_web/Bud cavalli legends_ts.jpg",
+        "zoom_web": "immagini_web/Bud cavalli legends.jpg",
+        "url_pubblico": "https://Annalisabetti.github.io/adulto/immagini_web/Bud%20cavalli%20legends.jpg"
+    },
+    {
+        "codice": "MNG-024",
+        "nome_file": "Bud cazzotto X NERO.jpg",
+        "percorso_originale": "Bud cazzotto X NERO.jpg",
+        "thumb_web": "immagini_web/Bud cazzotto X NERO_ts.jpg",
+        "zoom_web": "immagini_web/Bud cazzotto X NERO.jpg",
+        "url_pubblico": "https://Annalisabetti.github.io/adulto/immagini_web/Bud%20cazzotto%20X%20NERO.jpg"
+    },
+    {
+        "codice": "MNG-025",
+        "nome_file": "Bud cazzotto.jpg",
+        "percorso_originale": "Bud cazzotto.jpg",
+        "thumb_web": "immagini_web/Bud cazzotto_ts.jpg",
+        "zoom_web": "immagini_web/Bud cazzotto.jpg",
+        "url_pubblico": "https://Annalisabetti.github.io/adulto/immagini_web/Bud%20cazzotto.jpg"
+    },
+    {
+        "codice": "MNG-026",
+        "nome_file": "Bud ippopotami.jpg",
+        "percorso_originale": "Bud ippopotami.jpg",
+        "thumb_web": "immagini_web/Bud ippopotami_ts.jpg",
+        "zoom_web": "immagini_web/Bud ippopotami.jpg",
+        "url_pubblico": "https://Annalisabetti.github.io/adulto/immagini_web/Bud%20ippopotami.jpg"
+    },
+    {
+        "codice": "MNG-027",
+        "nome_file": "Bud legend bia.jpg",
+        "percorso_originale": "Bud legend bia.jpg",
+        "thumb_web": "immagini_web/Bud legend bia_ts.jpg",
+        "zoom_web": "immagini_web/Bud legend bia.jpg",
+        "url_pubblico": "https://Annalisabetti.github.io/adulto/immagini_web/Bud%20legend%20bia.jpg"
+    },
+    {
+        "codice": "MNG-028",
+        "nome_file": "Bud pattini.jpg",
+        "percorso_originale": "Bud pattini.jpg",
+        "thumb_web": "immagini_web/Bud pattini_ts.jpg",
+        "zoom_web": "immagini_web/Bud pattini.jpg",
+        "url_pubblico": "https://Annalisabetti.github.io/adulto/immagini_web/Bud%20pattini.jpg"
+    },
+    {
+        "codice": "MNG-029",
+        "nome_file": "Bud pistoleri.jpg",
+        "percorso_originale": "Bud pistoleri.jpg",
+        "thumb_web": "immagini_web/Bud pistoleri_ts.jpg",
+        "zoom_web": "immagini_web/Bud pistoleri.jpg",
+        "url_pubblico": "https://Annalisabetti.github.io/adulto/immagini_web/Bud%20pistoleri.jpg"
+    },
+    {
+        "codice": "MNG-030",
+        "nome_file": "Bud road moto.jpg",
+        "percorso_originale": "Bud road moto.jpg",
+        "thumb_web": "immagini_web/Bud road moto_ts.jpg",
+        "zoom_web": "immagini_web/Bud road moto.jpg",
+        "url_pubblico": "https://Annalisabetti.github.io/adulto/immagini_web/Bud%20road%20moto.jpg"
+    },
+    {
+        "codice": "MNG-031",
+        "nome_file": "Bud Terence pollo.jpg",
+        "percorso_originale": "Bud Terence pollo.jpg",
+        "thumb_web": "immagini_web/Bud Terence pollo_ts.jpg",
+        "zoom_web": "immagini_web/Bud Terence pollo.jpg",
+        "url_pubblico": "https://Annalisabetti.github.io/adulto/immagini_web/Bud%20Terence%20pollo.jpg"
+    },
+    {
+        "codice": "MNG-032",
+        "nome_file": "bud the legend x scuri.jpg",
+        "percorso_originale": "bud the legend x scuri.jpg",
+        "thumb_web": "immagini_web/bud the legend x scuri_ts.jpg",
+        "zoom_web": "immagini_web/bud the legend x scuri.jpg",
+        "url_pubblico": "https://Annalisabetti.github.io/adulto/immagini_web/bud%20the%20legend%20x%20scuri.jpg"
+    },
+    {
+        "codice": "MNG-033",
+        "nome_file": "Bud wanted.jpg",
+        "percorso_originale": "Bud wanted.jpg",
+        "thumb_web": "immagini_web/Bud wanted_ts.jpg",
+        "zoom_web": "immagini_web/Bud wanted.jpg",
+        "url_pubblico": "https://Annalisabetti.github.io/adulto/immagini_web/Bud%20wanted.jpg"
+    },
+    {
+        "codice": "MNG-034",
+        "nome_file": "buongiorno un cazzo.jpg",
+        "percorso_originale": "buongiorno un cazzo.jpg",
+        "thumb_web": "immagini_web/buongiorno un cazzo_ts.jpg",
+        "zoom_web": "immagini_web/buongiorno un cazzo.jpg",
+        "url_pubblico": "https://Annalisabetti.github.io/adulto/immagini_web/buongiorno%20un%20cazzo.jpg"
+    },
+    {
+        "codice": "MNG-035",
+        "nome_file": "CALBONI.jpg",
+        "percorso_originale": "CALBONI.jpg",
+        "thumb_web": "immagini_web/CALBONI_ts.jpg",
+        "zoom_web": "immagini_web/CALBONI.jpg",
+        "url_pubblico": "https://Annalisabetti.github.io/adulto/immagini_web/CALBONI.jpg"
+    },
+    {
+        "codice": "MNG-036",
+        "nome_file": "CLINT.jpg",
+        "percorso_originale": "CLINT.jpg",
+        "thumb_web": "immagini_web/CLINT_ts.jpg",
+        "zoom_web": "immagini_web/CLINT.jpg",
+        "url_pubblico": "https://Annalisabetti.github.io/adulto/immagini_web/CLINT.jpg"
+    },
+    {
+        "codice": "MNG-037",
+        "nome_file": "DEAD POOL RETTANGOLO.jpg",
+        "percorso_originale": "DEAD POOL RETTANGOLO.jpg",
+        "thumb_web": "immagini_web/DEAD POOL RETTANGOLO_ts.jpg",
+        "zoom_web": "immagini_web/DEAD POOL RETTANGOLO.jpg",
+        "url_pubblico": "https://Annalisabetti.github.io/adulto/immagini_web/DEAD%20POOL%20RETTANGOLO.jpg"
+    },
+    {
+        "codice": "MNG-038",
+        "nome_file": "DUNE BUGGY.jpg",
+        "percorso_originale": "DUNE BUGGY.jpg",
+        "thumb_web": "immagini_web/DUNE BUGGY_ts.jpg",
+        "zoom_web": "immagini_web/DUNE BUGGY.jpg",
+        "url_pubblico": "https://Annalisabetti.github.io/adulto/immagini_web/DUNE%20BUGGY.jpg"
+    },
+    {
+        "codice": "MNG-039",
+        "nome_file": "ELIO.jpg",
+        "percorso_originale": "ELIO.jpg",
+        "thumb_web": "immagini_web/ELIO_ts.jpg",
+        "zoom_web": "immagini_web/ELIO.jpg",
+        "url_pubblico": "https://Annalisabetti.github.io/adulto/immagini_web/ELIO.jpg"
+    },
+    {
+        "codice": "MNG-040",
+        "nome_file": "ER MONNEZZA.jpg",
+        "percorso_originale": "ER MONNEZZA.jpg",
+        "thumb_web": "immagini_web/ER MONNEZZA_ts.jpg",
+        "zoom_web": "immagini_web/ER MONNEZZA.jpg",
+        "url_pubblico": "https://Annalisabetti.github.io/adulto/immagini_web/ER%20MONNEZZA.jpg"
+    },
+    {
+        "codice": "MNG-041",
+        "nome_file": "ESERCIZI X WEEK END.jpg",
+        "percorso_originale": "ESERCIZI X WEEK END.jpg",
+        "thumb_web": "immagini_web/ESERCIZI X WEEK END_ts.jpg",
+        "zoom_web": "immagini_web/ESERCIZI X WEEK END.jpg",
+        "url_pubblico": "https://Annalisabetti.github.io/adulto/immagini_web/ESERCIZI%20X%20WEEK%20END.jpg"
+    },
+    {
+        "codice": "MNG-042",
+        "nome_file": "gianni agnelli.jpg",
+        "percorso_originale": "gianni agnelli.jpg",
+        "thumb_web": "immagini_web/gianni agnelli_ts.jpg",
+        "zoom_web": "immagini_web/gianni agnelli.jpg",
+        "url_pubblico": "https://Annalisabetti.github.io/adulto/immagini_web/gianni%20agnelli.jpg"
+    },
+    {
+        "codice": "MNG-043",
+        "nome_file": "gin tonic.jpg",
+        "percorso_originale": "gin tonic.jpg",
+        "thumb_web": "immagini_web/gin tonic_ts.jpg",
+        "zoom_web": "immagini_web/gin tonic.jpg",
+        "url_pubblico": "https://Annalisabetti.github.io/adulto/immagini_web/gin%20tonic.jpg"
+    },
+    {
+        "codice": "MNG-044",
+        "nome_file": "goldrake.jpg",
+        "percorso_originale": "goldrake.jpg",
+        "thumb_web": "immagini_web/goldrake_ts.jpg",
+        "zoom_web": "immagini_web/goldrake.jpg",
+        "url_pubblico": "https://Annalisabetti.github.io/adulto/immagini_web/goldrake.jpg"
+    },
+    {
+        "codice": "MNG-045",
+        "nome_file": "grattachecca.jpg",
+        "percorso_originale": "grattachecca.jpg",
+        "thumb_web": "immagini_web/grattachecca_ts.jpg",
+        "zoom_web": "immagini_web/grattachecca.jpg",
+        "url_pubblico": "https://Annalisabetti.github.io/adulto/immagini_web/grattachecca.jpg"
+    },
+    {
+        "codice": "MNG-046",
+        "nome_file": "harry casate bia.jpg",
+        "percorso_originale": "harry casate bia.jpg",
+        "thumb_web": "immagini_web/harry casate bia_ts.jpg",
+        "zoom_web": "immagini_web/harry casate bia.jpg",
+        "url_pubblico": "https://Annalisabetti.github.io/adulto/immagini_web/harry%20casate%20bia.jpg"
+    },
+    {
+        "codice": "MNG-047",
+        "nome_file": "HELL FIRE NERO.jpg",
+        "percorso_originale": "HELL FIRE NERO.jpg",
+        "thumb_web": "immagini_web/HELL FIRE NERO_ts.jpg",
+        "zoom_web": "immagini_web/HELL FIRE NERO.jpg",
+        "url_pubblico": "https://Annalisabetti.github.io/adulto/immagini_web/HELL%20FIRE%20NERO.jpg"
+    },
+    {
+        "codice": "MNG-048",
+        "nome_file": "HELL FIRE.jpg",
+        "percorso_originale": "HELL FIRE.jpg",
+        "thumb_web": "immagini_web/HELL FIRE_ts.jpg",
+        "zoom_web": "immagini_web/HELL FIRE.jpg",
+        "url_pubblico": "https://Annalisabetti.github.io/adulto/immagini_web/HELL%20FIRE.jpg"
+    },
+    {
+        "codice": "MNG-049",
+        "nome_file": "IL BUONO IL BRUTTO.jpg",
+        "percorso_originale": "IL BUONO IL BRUTTO.jpg",
+        "thumb_web": "immagini_web/IL BUONO IL BRUTTO_ts.jpg",
+        "zoom_web": "immagini_web/IL BUONO IL BRUTTO.jpg",
+        "url_pubblico": "https://Annalisabetti.github.io/adulto/immagini_web/IL%20BUONO%20IL%20BRUTTO.jpg"
+    },
+    {
+        "codice": "MNG-050",
+        "nome_file": "intelligenza.jpg",
+        "percorso_originale": "intelligenza.jpg",
+        "thumb_web": "immagini_web/intelligenza_ts.jpg",
+        "zoom_web": "immagini_web/intelligenza.jpg",
+        "url_pubblico": "https://Annalisabetti.github.io/adulto/immagini_web/intelligenza.jpg"
+    },
+    {
+        "codice": "MNG-051",
+        "nome_file": "it x nero.jpg",
+        "percorso_originale": "it x nero.jpg",
+        "thumb_web": "immagini_web/it x nero_ts.jpg",
+        "zoom_web": "immagini_web/it x nero.jpg",
+        "url_pubblico": "https://Annalisabetti.github.io/adulto/immagini_web/it%20x%20nero.jpg"
+    },
+    {
+        "codice": "MNG-052",
+        "nome_file": "joker cena.jpg",
+        "percorso_originale": "joker cena.jpg",
+        "thumb_web": "immagini_web/joker cena_ts.jpg",
+        "zoom_web": "immagini_web/joker cena.jpg",
+        "url_pubblico": "https://Annalisabetti.github.io/adulto/immagini_web/joker%20cena.jpg"
+    },
+    {
+        "codice": "MNG-053",
+        "nome_file": "joker nuovo film.jpg",
+        "percorso_originale": "joker nuovo film.jpg",
+        "thumb_web": "immagini_web/joker nuovo film_ts.jpg",
+        "zoom_web": "immagini_web/joker nuovo film.jpg",
+        "url_pubblico": "https://Annalisabetti.github.io/adulto/immagini_web/joker%20nuovo%20film.jpg"
+    },
+    {
+        "codice": "MNG-054",
+        "nome_file": "joker why so bia.jpg",
+        "percorso_originale": "joker why so bia.jpg",
+        "thumb_web": "immagini_web/joker why so bia_ts.jpg",
+        "zoom_web": "immagini_web/joker why so bia.jpg",
+        "url_pubblico": "https://Annalisabetti.github.io/adulto/immagini_web/joker%20why%20so%20bia.jpg"
+    },
+    {
+        "codice": "MNG-055",
+        "nome_file": "joker why so nero.jpg",
+        "percorso_originale": "joker why so nero.jpg",
+        "thumb_web": "immagini_web/joker why so nero_ts.jpg",
+        "zoom_web": "immagini_web/joker why so nero.jpg",
+        "url_pubblico": "https://Annalisabetti.github.io/adulto/immagini_web/joker%20why%20so%20nero.jpg"
+    },
+    {
+        "codice": "MNG-056",
+        "nome_file": "KEN SHIRO GRUPPO NERO.jpg",
+        "percorso_originale": "KEN SHIRO GRUPPO NERO.jpg",
+        "thumb_web": "immagini_web/KEN SHIRO GRUPPO NERO_ts.jpg",
+        "zoom_web": "immagini_web/KEN SHIRO GRUPPO NERO.jpg",
+        "url_pubblico": "https://Annalisabetti.github.io/adulto/immagini_web/KEN%20SHIRO%20GRUPPO%20NERO.jpg"
+    },
+    {
+        "codice": "MNG-057",
+        "nome_file": "KEN SHIRO RETTANGOLO X NERO.jpg",
+        "percorso_originale": "KEN SHIRO RETTANGOLO X NERO.jpg",
+        "thumb_web": "immagini_web/KEN SHIRO RETTANGOLO X NERO_ts.jpg",
+        "zoom_web": "immagini_web/KEN SHIRO RETTANGOLO X NERO.jpg",
+        "url_pubblico": "https://Annalisabetti.github.io/adulto/immagini_web/KEN%20SHIRO%20RETTANGOLO%20X%20NERO.jpg"
+    },
+    {
+        "codice": "MNG-058",
+        "nome_file": "KEN SHIRO RETTANGOLO.jpg",
+        "percorso_originale": "KEN SHIRO RETTANGOLO.jpg",
+        "thumb_web": "immagini_web/KEN SHIRO RETTANGOLO_ts.jpg",
+        "zoom_web": "immagini_web/KEN SHIRO RETTANGOLO.jpg",
+        "url_pubblico": "https://Annalisabetti.github.io/adulto/immagini_web/KEN%20SHIRO%20RETTANGOLO.jpg"
+    },
+    {
+        "codice": "MNG-059",
+        "nome_file": "LOS POLLOS.jpg",
+        "percorso_originale": "LOS POLLOS.jpg",
+        "thumb_web": "immagini_web/LOS POLLOS_ts.jpg",
+        "zoom_web": "immagini_web/LOS POLLOS.jpg",
+        "url_pubblico": "https://Annalisabetti.github.io/adulto/immagini_web/LOS%20POLLOS.jpg"
+    },
+    {
+        "codice": "MNG-060",
+        "nome_file": "LUIGI FUNGO BIANCO.jpg",
+        "percorso_originale": "LUIGI FUNGO BIANCO.jpg",
+        "thumb_web": "immagini_web/LUIGI FUNGO BIANCO_ts.jpg",
+        "zoom_web": "immagini_web/LUIGI FUNGO BIANCO.jpg",
+        "url_pubblico": "https://Annalisabetti.github.io/adulto/immagini_web/LUIGI%20FUNGO%20BIANCO.jpg"
+    },
+    {
+        "codice": "MNG-061",
+        "nome_file": "LUIGI FUNGO NERO.jpg",
+        "percorso_originale": "LUIGI FUNGO NERO.jpg",
+        "thumb_web": "immagini_web/LUIGI FUNGO NERO_ts.jpg",
+        "zoom_web": "immagini_web/LUIGI FUNGO NERO.jpg",
+        "url_pubblico": "https://Annalisabetti.github.io/adulto/immagini_web/LUIGI%20FUNGO%20NERO.jpg"
+    },
+    {
+        "codice": "MNG-062",
+        "nome_file": "LUPIN GRUPPO.jpg",
+        "percorso_originale": "LUPIN GRUPPO.jpg",
+        "thumb_web": "immagini_web/LUPIN GRUPPO_ts.jpg",
+        "zoom_web": "immagini_web/LUPIN GRUPPO.jpg",
+        "url_pubblico": "https://Annalisabetti.github.io/adulto/immagini_web/LUPIN%20GRUPPO.jpg"
+    },
+    {
+        "codice": "MNG-063",
+        "nome_file": "LUPIN GTA.jpg",
+        "percorso_originale": "LUPIN GTA.jpg",
+        "thumb_web": "immagini_web/LUPIN GTA_ts.jpg",
+        "zoom_web": "immagini_web/LUPIN GTA.jpg",
+        "url_pubblico": "https://Annalisabetti.github.io/adulto/immagini_web/LUPIN%20GTA.jpg"
+    },
+    {
+        "codice": "MNG-064",
+        "nome_file": "lupin vespa.jpg",
+        "percorso_originale": "lupin vespa.jpg",
+        "thumb_web": "immagini_web/lupin vespa_ts.jpg",
+        "zoom_web": "immagini_web/lupin vespa.jpg",
+        "url_pubblico": "https://Annalisabetti.github.io/adulto/immagini_web/lupin%20vespa.jpg"
+    },
+    {
+        "codice": "MNG-065",
+        "nome_file": "MANDALORIAN.jpg",
+        "percorso_originale": "MANDALORIAN.jpg",
+        "thumb_web": "immagini_web/MANDALORIAN_ts.jpg",
+        "zoom_web": "immagini_web/MANDALORIAN.jpg",
+        "url_pubblico": "https://Annalisabetti.github.io/adulto/immagini_web/MANDALORIAN.jpg"
+    },
+    {
+        "codice": "MNG-066",
+        "nome_file": "MARIO FUNGO.jpg",
+        "percorso_originale": "MARIO FUNGO.jpg",
+        "thumb_web": "immagini_web/MARIO FUNGO_ts.jpg",
+        "zoom_web": "immagini_web/MARIO FUNGO.jpg",
+        "url_pubblico": "https://Annalisabetti.github.io/adulto/immagini_web/MARIO%20FUNGO.jpg"
+    },
+    {
+        "codice": "MNG-067",
+        "nome_file": "MARVEL SCRITTA.jpg",
+        "percorso_originale": "MARVEL SCRITTA.jpg",
+        "thumb_web": "immagini_web/MARVEL SCRITTA_ts.jpg",
+        "zoom_web": "immagini_web/MARVEL SCRITTA.jpg",
+        "url_pubblico": "https://Annalisabetti.github.io/adulto/immagini_web/MARVEL%20SCRITTA.jpg"
+    },
+    {
+        "codice": "MNG-068",
+        "nome_file": "MOJITO.jpg",
+        "percorso_originale": "MOJITO.jpg",
+        "thumb_web": "immagini_web/MOJITO_ts.jpg",
+        "zoom_web": "immagini_web/MOJITO.jpg",
+        "url_pubblico": "https://Annalisabetti.github.io/adulto/immagini_web/MOJITO.jpg"
+    },
+    {
+        "codice": "MNG-069",
+        "nome_file": "MONACO CAR.jpg",
+        "percorso_originale": "MONACO CAR.jpg",
+        "thumb_web": "immagini_web/MONACO CAR_ts.jpg",
+        "zoom_web": "immagini_web/MONACO CAR.jpg",
+        "url_pubblico": "https://Annalisabetti.github.io/adulto/immagini_web/MONACO%20CAR.jpg"
+    },
+    {
+        "codice": "MNG-070",
+        "nome_file": "MOTO GUZZI.jpg",
+        "percorso_originale": "MOTO GUZZI.jpg",
+        "thumb_web": "immagini_web/MOTO GUZZI_ts.jpg",
+        "zoom_web": "immagini_web/MOTO GUZZI.jpg",
+        "url_pubblico": "https://Annalisabetti.github.io/adulto/immagini_web/MOTO%20GUZZI.jpg"
+    },
+    {
+        "codice": "MNG-071",
+        "nome_file": "MOTO LUCKY 7.jpg",
+        "percorso_originale": "MOTO LUCKY 7.jpg",
+        "thumb_web": "immagini_web/MOTO LUCKY 7_ts.jpg",
+        "zoom_web": "immagini_web/MOTO LUCKY 7.jpg",
+        "url_pubblico": "https://Annalisabetti.github.io/adulto/immagini_web/MOTO%20LUCKY%207.jpg"
+    },
+    {
+        "codice": "MNG-072",
+        "nome_file": "MOTO ROUTE 66.jpg",
+        "percorso_originale": "MOTO ROUTE 66.jpg",
+        "thumb_web": "immagini_web/MOTO ROUTE 66_ts.jpg",
+        "zoom_web": "immagini_web/MOTO ROUTE 66.jpg",
+        "url_pubblico": "https://Annalisabetti.github.io/adulto/immagini_web/MOTO%20ROUTE%2066.jpg"
+    },
+    {
+        "codice": "MNG-073",
+        "nome_file": "NON STO ZITTO.jpg",
+        "percorso_originale": "NON STO ZITTO.jpg",
+        "thumb_web": "immagini_web/NON STO ZITTO_ts.jpg",
+        "zoom_web": "immagini_web/NON STO ZITTO.jpg",
+        "url_pubblico": "https://Annalisabetti.github.io/adulto/immagini_web/NON%20STO%20ZITTO.jpg"
+    },
+    {
+        "codice": "MNG-074",
+        "nome_file": "padel bianco.jpg",
+        "percorso_originale": "padel bianco.jpg",
+        "thumb_web": "immagini_web/padel bianco_ts.jpg",
+        "zoom_web": "immagini_web/padel bianco.jpg",
+        "url_pubblico": "https://Annalisabetti.github.io/adulto/immagini_web/padel%20bianco.jpg"
+    },
+    {
+        "codice": "MNG-075",
+        "nome_file": "padel x nero.jpg",
+        "percorso_originale": "padel x nero.jpg",
+        "thumb_web": "immagini_web/padel x nero_ts.jpg",
+        "zoom_web": "immagini_web/padel x nero.jpg",
+        "url_pubblico": "https://Annalisabetti.github.io/adulto/immagini_web/padel%20x%20nero.jpg"
+    },
+    {
+        "codice": "MNG-076",
+        "nome_file": "papero choose violent.jpg",
+        "percorso_originale": "papero choose violent.jpg",
+        "thumb_web": "immagini_web/papero choose violent_ts.jpg",
+        "zoom_web": "immagini_web/papero choose violent.jpg",
+        "url_pubblico": "https://Annalisabetti.github.io/adulto/immagini_web/papero%20choose%20violent.jpg"
+    },
+    {
+        "codice": "MNG-077",
+        "nome_file": "PAZZI X MARY.jpg",
+        "percorso_originale": "PAZZI X MARY.jpg",
+        "thumb_web": "immagini_web/PAZZI X MARY_ts.jpg",
+        "zoom_web": "immagini_web/PAZZI X MARY.jpg",
+        "url_pubblico": "https://Annalisabetti.github.io/adulto/immagini_web/PAZZI%20X%20MARY.jpg"
+    },
+    {
+        "codice": "MNG-078",
+        "nome_file": "POVERO GABBIANO.jpg",
+        "percorso_originale": "POVERO GABBIANO.jpg",
+        "thumb_web": "immagini_web/POVERO GABBIANO_ts.jpg",
+        "zoom_web": "immagini_web/POVERO GABBIANO.jpg",
+        "url_pubblico": "https://Annalisabetti.github.io/adulto/immagini_web/POVERO%20GABBIANO.jpg"
+    },
+    {
+        "codice": "MNG-079",
+        "nome_file": "POZZETTO.jpg",
+        "percorso_originale": "POZZETTO.jpg",
+        "thumb_web": "immagini_web/POZZETTO_ts.jpg",
+        "zoom_web": "immagini_web/POZZETTO.jpg",
+        "url_pubblico": "https://Annalisabetti.github.io/adulto/immagini_web/POZZETTO.jpg"
+    },
+    {
+        "codice": "MNG-080",
+        "nome_file": "QUASI DEL TUTTO.jpg",
+        "percorso_originale": "QUASI DEL TUTTO.jpg",
+        "thumb_web": "immagini_web/QUASI DEL TUTTO_ts.jpg",
+        "zoom_web": "immagini_web/QUASI DEL TUTTO.jpg",
+        "url_pubblico": "https://Annalisabetti.github.io/adulto/immagini_web/QUASI%20DEL%20TUTTO.jpg"
+    },
+    {
+        "codice": "MNG-081",
+        "nome_file": "rettangolo per catalogANCHE OGGI.jpg",
+        "percorso_originale": "rettangolo per catalogANCHE OGGI.jpg",
+        "thumb_web": "immagini_web/rettangolo per catalogANCHE OGGI_ts.jpg",
+        "zoom_web": "immagini_web/rettangolo per catalogANCHE OGGI.jpg",
+        "url_pubblico": "https://Annalisabetti.github.io/adulto/immagini_web/rettangolo%20per%20catalogANCHE%20OGGI.jpg"
+    },
+    {
+        "codice": "MNG-082",
+        "nome_file": "RITORNO AL FUTURO.jpg",
+        "percorso_originale": "RITORNO AL FUTURO.jpg",
+        "thumb_web": "immagini_web/RITORNO AL FUTURO_ts.jpg",
+        "zoom_web": "immagini_web/RITORNO AL FUTURO.jpg",
+        "url_pubblico": "https://Annalisabetti.github.io/adulto/immagini_web/RITORNO%20AL%20FUTURO.jpg"
+    },
+    {
+        "codice": "MNG-083",
+        "nome_file": "ROCKY PUGNO.jpg",
+        "percorso_originale": "ROCKY PUGNO.jpg",
+        "thumb_web": "immagini_web/ROCKY PUGNO_ts.jpg",
+        "zoom_web": "immagini_web/ROCKY PUGNO.jpg",
+        "url_pubblico": "https://Annalisabetti.github.io/adulto/immagini_web/ROCKY%20PUGNO.jpg"
+    },
+    {
+        "codice": "MNG-084",
+        "nome_file": "senna.jpg",
+        "percorso_originale": "senna.jpg",
+        "thumb_web": "immagini_web/senna_ts.jpg",
+        "zoom_web": "immagini_web/senna.jpg",
+        "url_pubblico": "https://Annalisabetti.github.io/adulto/immagini_web/senna.jpg"
+    },
+    {
+        "codice": "MNG-085",
+        "nome_file": "SINNER.jpg",
+        "percorso_originale": "SINNER.jpg",
+        "thumb_web": "immagini_web/SINNER_ts.jpg",
+        "zoom_web": "immagini_web/SINNER.jpg",
+        "url_pubblico": "https://Annalisabetti.github.io/adulto/immagini_web/SINNER.jpg"
+    },
+    {
+        "codice": "MNG-086",
+        "nome_file": "skidibi x bianco.jpg",
+        "percorso_originale": "skidibi x bianco.jpg",
+        "thumb_web": "immagini_web/skidibi x bianco_ts.jpg",
+        "zoom_web": "immagini_web/skidibi x bianco.jpg",
+        "url_pubblico": "https://Annalisabetti.github.io/adulto/immagini_web/skidibi%20x%20bianco.jpg"
+    },
+    {
+        "codice": "MNG-087",
+        "nome_file": "skidibi x nero.jpg",
+        "percorso_originale": "skidibi x nero.jpg",
+        "thumb_web": "immagini_web/skidibi x nero_ts.jpg",
+        "zoom_web": "immagini_web/skidibi x nero.jpg",
+        "url_pubblico": "https://Annalisabetti.github.io/adulto/immagini_web/skidibi%20x%20nero.jpg"
+    },
+    {
+        "codice": "MNG-088",
+        "nome_file": "SPRITZ.jpg",
+        "percorso_originale": "SPRITZ.jpg",
+        "thumb_web": "immagini_web/SPRITZ_ts.jpg",
+        "zoom_web": "immagini_web/SPRITZ.jpg",
+        "url_pubblico": "https://Annalisabetti.github.io/adulto/immagini_web/SPRITZ.jpg"
+    },
+    {
+        "codice": "MNG-089",
+        "nome_file": "STAR WAR FINESTRA.jpg",
+        "percorso_originale": "STAR WAR FINESTRA.jpg",
+        "thumb_web": "immagini_web/STAR WAR FINESTRA_ts.jpg",
+        "zoom_web": "immagini_web/STAR WAR FINESTRA.jpg",
+        "url_pubblico": "https://Annalisabetti.github.io/adulto/immagini_web/STAR%20WAR%20FINESTRA.jpg"
+    },
+    {
+        "codice": "MNG-090",
+        "nome_file": "STAR WAR JEDI.jpg",
+        "percorso_originale": "STAR WAR JEDI.jpg",
+        "thumb_web": "immagini_web/STAR WAR JEDI_ts.jpg",
+        "zoom_web": "immagini_web/STAR WAR JEDI.jpg",
+        "url_pubblico": "https://Annalisabetti.github.io/adulto/immagini_web/STAR%20WAR%20JEDI.jpg"
+    },
+    {
+        "codice": "MNG-091",
+        "nome_file": "STEVE MCQUEEN.jpg",
+        "percorso_originale": "STEVE MCQUEEN.jpg",
+        "thumb_web": "immagini_web/STEVE MCQUEEN_ts.jpg",
+        "zoom_web": "immagini_web/STEVE MCQUEEN.jpg",
+        "url_pubblico": "https://Annalisabetti.github.io/adulto/immagini_web/STEVE%20MCQUEEN.jpg"
+    },
+    {
+        "codice": "MNG-092",
+        "nome_file": "STRANGER BICICLETTE.jpg",
+        "percorso_originale": "STRANGER BICICLETTE.jpg",
+        "thumb_web": "immagini_web/STRANGER BICICLETTE_ts.jpg",
+        "zoom_web": "immagini_web/STRANGER BICICLETTE.jpg",
+        "url_pubblico": "https://Annalisabetti.github.io/adulto/immagini_web/STRANGER%20BICICLETTE.jpg"
+    },
+    {
+        "codice": "MNG-093",
+        "nome_file": "STRANGER GRUPPO 3 NERO.jpg",
+        "percorso_originale": "STRANGER GRUPPO 3 NERO.jpg",
+        "thumb_web": "immagini_web/STRANGER GRUPPO 3 NERO_ts.jpg",
+        "zoom_web": "immagini_web/STRANGER GRUPPO 3 NERO.jpg",
+        "url_pubblico": "https://Annalisabetti.github.io/adulto/immagini_web/STRANGER%20GRUPPO%203%20NERO.jpg"
+    },
+    {
+        "codice": "MNG-094",
+        "nome_file": "STRANGER GRUPPO 3.jpg",
+        "percorso_originale": "STRANGER GRUPPO 3.jpg",
+        "thumb_web": "immagini_web/STRANGER GRUPPO 3_ts.jpg",
+        "zoom_web": "immagini_web/STRANGER GRUPPO 3.jpg",
+        "url_pubblico": "https://Annalisabetti.github.io/adulto/immagini_web/STRANGER%20GRUPPO%203.jpg"
+    },
+    {
+        "codice": "MNG-095",
+        "nome_file": "STRANGER LOGO BIA.jpg",
+        "percorso_originale": "STRANGER LOGO BIA.jpg",
+        "thumb_web": "immagini_web/STRANGER LOGO BIA_ts.jpg",
+        "zoom_web": "immagini_web/STRANGER LOGO BIA.jpg",
+        "url_pubblico": "https://Annalisabetti.github.io/adulto/immagini_web/STRANGER%20LOGO%20BIA.jpg"
+    },
+    {
+        "codice": "MNG-096",
+        "nome_file": "STRANGER LOGO NERO.jpg",
+        "percorso_originale": "STRANGER LOGO NERO.jpg",
+        "thumb_web": "immagini_web/STRANGER LOGO NERO_ts.jpg",
+        "zoom_web": "immagini_web/STRANGER LOGO NERO.jpg",
+        "url_pubblico": "https://Annalisabetti.github.io/adulto/immagini_web/STRANGER%20LOGO%20NERO.jpg"
+    },
+    {
+        "codice": "MNG-097",
+        "nome_file": "TERZA MEDIA.jpg",
+        "percorso_originale": "TERZA MEDIA.jpg",
+        "thumb_web": "immagini_web/TERZA MEDIA_ts.jpg",
+        "zoom_web": "immagini_web/TERZA MEDIA.jpg",
+        "url_pubblico": "https://Annalisabetti.github.io/adulto/immagini_web/TERZA%20MEDIA.jpg"
+    },
+    {
+        "codice": "MNG-098",
+        "nome_file": "TEX CAVALLO.jpg",
+        "percorso_originale": "TEX CAVALLO.jpg",
+        "thumb_web": "immagini_web/TEX CAVALLO_ts.jpg",
+        "zoom_web": "immagini_web/TEX CAVALLO.jpg",
+        "url_pubblico": "https://Annalisabetti.github.io/adulto/immagini_web/TEX%20CAVALLO.jpg"
+    },
+    {
+        "codice": "MNG-099",
+        "nome_file": "TEX MONTAGNA.jpg",
+        "percorso_originale": "TEX MONTAGNA.jpg",
+        "thumb_web": "immagini_web/TEX MONTAGNA_ts.jpg",
+        "zoom_web": "immagini_web/TEX MONTAGNA.jpg",
+        "url_pubblico": "https://Annalisabetti.github.io/adulto/immagini_web/TEX%20MONTAGNA.jpg"
+    },
+    {
+        "codice": "MNG-100",
+        "nome_file": "UBRIACO.jpg",
+        "percorso_originale": "UBRIACO.jpg",
+        "thumb_web": "immagini_web/UBRIACO_ts.jpg",
+        "zoom_web": "immagini_web/UBRIACO.jpg",
+        "url_pubblico": "https://Annalisabetti.github.io/adulto/immagini_web/UBRIACO.jpg"
+    },
+    {
+        "codice": "MNG-101",
+        "nome_file": "VENOM BIA.jpg",
+        "percorso_originale": "VENOM BIA.jpg",
+        "thumb_web": "immagini_web/VENOM BIA_ts.jpg",
+        "zoom_web": "immagini_web/VENOM BIA.jpg",
+        "url_pubblico": "https://Annalisabetti.github.io/adulto/immagini_web/VENOM%20BIA.jpg"
+    },
+    {
+        "codice": "MNG-102",
+        "nome_file": "VENOM NERO.jpg",
+        "percorso_originale": "VENOM NERO.jpg",
+        "thumb_web": "immagini_web/VENOM NERO_ts.jpg",
+        "zoom_web": "immagini_web/VENOM NERO.jpg",
+        "url_pubblico": "https://Annalisabetti.github.io/adulto/immagini_web/VENOM%20NERO.jpg"
+    },
+    {
+        "codice": "MNG-103",
+        "nome_file": "VESPA CARTOLINA.jpg",
+        "percorso_originale": "VESPA CARTOLINA.jpg",
+        "thumb_web": "immagini_web/VESPA CARTOLINA_ts.jpg",
+        "zoom_web": "immagini_web/VESPA CARTOLINA.jpg",
+        "url_pubblico": "https://Annalisabetti.github.io/adulto/immagini_web/VESPA%20CARTOLINA.jpg"
+    },
+    {
+        "codice": "MNG-104",
+        "nome_file": "VESPA ITALIAN NERO.jpg",
+        "percorso_originale": "VESPA ITALIAN NERO.jpg",
+        "thumb_web": "immagini_web/VESPA ITALIAN NERO_ts.jpg",
+        "zoom_web": "immagini_web/VESPA ITALIAN NERO.jpg",
+        "url_pubblico": "https://Annalisabetti.github.io/adulto/immagini_web/VESPA%20ITALIAN%20NERO.jpg"
+    },
+    {
+        "codice": "MNG-105",
+        "nome_file": "VESPA ITALIAN.jpg",
+        "percorso_originale": "VESPA ITALIAN.jpg",
+        "thumb_web": "immagini_web/VESPA ITALIAN_ts.jpg",
+        "zoom_web": "immagini_web/VESPA ITALIAN.jpg",
+        "url_pubblico": "https://Annalisabetti.github.io/adulto/immagini_web/VESPA%20ITALIAN.jpg"
+    },
+    {
+        "codice": "MNG-106",
+        "nome_file": "viv l'amore.jpg",
+        "percorso_originale": "viv l'amore.jpg",
+        "thumb_web": "immagini_web/viv l'amore_ts.jpg",
+        "zoom_web": "immagini_web/viv l'amore.jpg",
+        "url_pubblico": "https://Annalisabetti.github.io/adulto/immagini_web/viv%20l%27amore.jpg"
+    },
+    {
+        "codice": "MNG-107",
+        "nome_file": "YATTAMAN.jpg",
+        "percorso_originale": "YATTAMAN.jpg",
+        "thumb_web": "immagini_web/YATTAMAN_ts.jpg",
+        "zoom_web": "immagini_web/YATTAMAN.jpg",
+        "url_pubblico": "https://Annalisabetti.github.io/adulto/immagini_web/YATTAMAN.jpg"
+    }
+]

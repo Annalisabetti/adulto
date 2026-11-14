@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Catalogo T-Shirt Express</title>
+<style>
+body { font-family: Arial, sans-serif; margin: 0; padding: 6px; padding-bottom: 85px; background-color: #f0f0f0; color: #333; }
+.page { width: 100%; max-width: 800px; margin: 0 auto 10px auto; padding: 6px; box-sizing: border-box; background: white; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
+.item { display: flex; flex-direction: column; align-items: center; justify-content: space-between; border: 1px solid #e0e0e0; border-radius: 6px; padding: 4px; background: #fff; box-sizing: border-box; }
+.item img { width: 100%; height: auto; max-height: 125px; object-fit: contain; cursor: pointer; border-radius: 4px; }
+.info-box { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 3px; margin-top: 4px; background: #f8f8f8; padding: 2px 4px; border-radius: 4px; box-sizing: border-box; }
+.code { font-size: 9px; font-weight: bold; color: #333; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 60%; }
+.btn-seleziona { background-color: #ff4757; color: white; border: none; padding: 2px 6px; font-size: 9px; font-weight: bold; border-radius: 3px; cursor: pointer; white-space: nowrap; }
+.btn-seleziona.selezionato { background-color: #2ed573; }
+.floating-bar { position: fixed; bottom: 12px; left: 50%; transform: translateX(-50%); width: 92%; max-width: 450px; background: #1e1e1e; color: white; padding: 8px 14px; display: flex; justify-content: space-between; align-items: center; box-sizing: border-box; border-radius: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.4); z-index: 1000; font-size: 13px; }
+.floating-bar button { background: #25d366; color: white; border: none; padding: 6px 14px; border-radius: 20px; font-weight: bold; font-size: 12px; cursor: pointer; }
+.modal-carrello { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 2000; justify-content: center; align-items: flex-end; }
+.modal-content { background: white; width: 100%; max-width: 500px; max-height: 80vh; border-radius: 16px 16px 0 0; padding: 15px; box-sizing: border-box; display: flex; flex-direction: column; }
+.modal-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #eee; padding-bottom: 8px; margin-bottom: 10px; }
+.cart-items-list { overflow-y: auto; flex-grow: 1; display: flex; flex-direction: column; gap: 8px; max-height: 50vh; margin-bottom: 12px; }
+.cart-item { display: flex; align-items: center; gap: 8px; background: #f9f9f9; padding: 6px; border-radius: 6px; border: 1px solid #eee; }
+.cart-item img { width: 40px; height: 40px; object-fit: contain; background: white; border-radius: 4px; }
+.cart-item-info { flex-grow: 1; font-size: 11px; font-weight: bold; }
+.cart-item-remove { background: #ff4757; color: white; border: none; padding: 4px 8px; border-radius: 4px; cursor: pointer; font-size: 10px; }
+.lightbox-modal { display: none; position: fixed; z-index: 3000; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(245, 245, 245, 0.95); justify-content: center; align-items: center; padding: 15px; box-sizing: border-box; cursor: pointer; }
+.lightbox-modal img { max-width: 95%; max-height: 90vh; border-radius: 8px; object-fit: contain; display: block; margin: auto; }
+@media (max-width: 480px) { .page { grid-template-columns: repeat(3, 1fr); gap: 4px; padding: 4px; } .item img { max-height: 105px; } .code { font-size: 8px; } .btn-seleziona { padding: 2px 4px; font-size: 8px; } }
+</style>
+</head>
+<body>
+<div class="page">
+<div class="item" data-codice="MNG-001" data-nome="3 500.jpg" data-thumb="immagini_web/3%20500_ts.jpg" data-zoom="immagini_web/3%20500.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/3%20500.jpg">
+<img src="immagini_web/3%20500_ts.jpg" loading="lazy" alt="MNG-001" onclick="apriZoom(this)" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-001">MNG-001</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-002" data-nome="4 robot nero.jpg" data-thumb="immagini_web/4%20robot%20nero_ts.jpg" data-zoom="immagini_web/4%20robot%20nero.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/4%20robot%20nero.jpg">
+<img src="immagini_web/4%20robot%20nero_ts.jpg" loading="lazy" alt="MNG-002" onclick="apriZoom(this)" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-002">MNG-002</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-003" data-nome="4 robot.jpg" data-thumb="immagini_web/4%20robot_ts.jpg" data-zoom="immagini_web/4%20robot.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/4%20robot.jpg">
+<img src="immagini_web/4%20robot_ts.jpg" loading="lazy" alt="MNG-003" onclick="apriZoom(this)" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-003">MNG-003</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-004" data-nome="500 gialla.jpg" data-thumb="immagini_web/500%20gialla_ts.jpg" data-zoom="immagini_web/500%20gialla.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/500%20gialla.jpg">
+<img src="immagini_web/500%20gialla_ts.jpg" loading="lazy" alt="MNG-004" onclick="apriZoom(this)" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-004">MNG-004</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-005" data-nome="ARRIVA LUI.jpg" data-thumb="immagini_web/ARRIVA%20LUI_ts.jpg" data-zoom="immagini_web/ARRIVA%20LUI.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/ARRIVA%20LUI.jpg">
+<img src="immagini_web/ARRIVA%20LUI_ts.jpg" loading="lazy" alt="MNG-005" onclick="apriZoom(this)" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-005">MNG-005</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-006" data-nome="ASPETTA CHE TI MOSTRO.jpg" data-thumb="immagini_web/ASPETTA%20CHE%20TI%20MOSTRO_ts.jpg" data-zoom="immagini_web/ASPETTA%20CHE%20TI%20MOSTRO.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/ASPETTA%20CHE%20TI%20MOSTRO.jpg">
+<img src="immagini_web/ASPETTA%20CHE%20TI%20MOSTRO_ts.jpg" loading="lazy" alt="MNG-006" onclick="apriZoom(this)" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-006">MNG-006</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-007" data-nome="ASSASSINS BIANCO NERO.jpg" data-thumb="immagini_web/ASSASSINS%20BIANCO%20NERO_ts.jpg" data-zoom="immagini_web/ASSASSINS%20BIANCO%20NERO.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/ASSASSINS%20BIANCO%20NERO.jpg">
+<img src="immagini_web/ASSASSINS%20BIANCO%20NERO_ts.jpg" loading="lazy" alt="MNG-007" onclick="apriZoom(this)" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-007">MNG-007</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-008" data-nome="ASSASSINS NUOVO nero.jpg" data-thumb="immagini_web/ASSASSINS%20NUOVO%20nero_ts.jpg" data-zoom="immagini_web/ASSASSINS%20NUOVO%20nero.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/ASSASSINS%20NUOVO%20nero.jpg">
+<img src="immagini_web/ASSASSINS%20NUOVO%20nero_ts.jpg" loading="lazy" alt="MNG-008" onclick="apriZoom(this)" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-008">MNG-008</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-009" data-nome="ASSASSINS NUOVO.jpg" data-thumb="immagini_web/ASSASSINS%20NUOVO_ts.jpg" data-zoom="immagini_web/ASSASSINS%20NUOVO.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/ASSASSINS%20NUOVO.jpg">
+<img src="immagini_web/ASSASSINS%20NUOVO_ts.jpg" loading="lazy" alt="MNG-009" onclick="apriZoom(this)" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-009">MNG-009</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-010" data-nome="BATMAN BLU.jpg" data-thumb="immagini_web/BATMAN%20BLU_ts.jpg" data-zoom="immagini_web/BATMAN%20BLU.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/BATMAN%20BLU.jpg">
+<img src="immagini_web/BATMAN%20BLU_ts.jpg" loading="lazy" alt="MNG-010" onclick="apriZoom(this)" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-010">MNG-010</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-011" data-nome="batman logo.jpg" data-thumb="immagini_web/batman%20logo_ts.jpg" data-zoom="immagini_web/batman%20logo.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/batman%20logo.jpg">
+<img src="immagini_web/batman%20logo_ts.jpg" loading="lazy" alt="MNG-011" onclick="apriZoom(this)" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-011">MNG-011</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-012" data-nome="BATMAN MATITA.jpg" data-thumb="immagini_web/BATMAN%20MATITA_ts.jpg" data-zoom="immagini_web/BATMAN%20MATITA.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/BATMAN%20MATITA.jpg">
+<img src="immagini_web/BATMAN%20MATITA_ts.jpg" loading="lazy" alt="MNG-012" onclick="apriZoom(this)" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-012">MNG-012</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+</div>
+<div class="page">
+<div class="item" data-codice="MNG-013" data-nome="BATMAN ROSSO.jpg" data-thumb="immagini_web/BATMAN%20ROSSO_ts.jpg" data-zoom="immagini_web/BATMAN%20ROSSO.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/BATMAN%20ROSSO.jpg">
+<img src="immagini_web/BATMAN%20ROSSO_ts.jpg" loading="lazy" alt="MNG-013" onclick="apriZoom(this)" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-013">MNG-013</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-014" data-nome="BETTER CALL.jpg" data-thumb="immagini_web/BETTER%20CALL_ts.jpg" data-zoom="immagini_web/BETTER%20CALL.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/BETTER%20CALL.jpg">
+<img src="immagini_web/BETTER%20CALL_ts.jpg" loading="lazy" alt="MNG-014" onclick="apriZoom(this)" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-014">MNG-014</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-015" data-nome="biker heroes.jpg" data-thumb="immagini_web/biker%20heroes_ts.jpg" data-zoom="immagini_web/biker%20heroes.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/biker%20heroes.jpg">
+<img src="immagini_web/biker%20heroes_ts.jpg" loading="lazy" alt="MNG-015" onclick="apriZoom(this)" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-015">MNG-015</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-016" data-nome="BREAKING IN PIEDI.jpg" data-thumb="immagini_web/BREAKING%20IN%20PIEDI_ts.jpg" data-zoom="immagini_web/BREAKING%20IN%20PIEDI.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/BREAKING%20IN%20PIEDI.jpg">
+<img src="immagini_web/BREAKING%20IN%20PIEDI_ts.jpg" loading="lazy" alt="MNG-016" onclick="apriZoom(this)" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-016">MNG-016</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-017" data-nome="Bud 4  FACCE X NERO.jpg" data-thumb="immagini_web/Bud%204%20%20FACCE%20X%20NERO_ts.jpg" data-zoom="immagini_web/Bud%204%20%20FACCE%20X%20NERO.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/Bud%204%20%20FACCE%20X%20NERO.jpg">
+<img src="immagini_web/Bud%204%20%20FACCE%20X%20NERO_ts.jpg" loading="lazy" alt="MNG-017" onclick="apriZoom(this)" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-017">MNG-017</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-018" data-nome="Bud 4 facce.jpg" data-thumb="immagini_web/Bud%204%20facce_ts.jpg" data-zoom="immagini_web/Bud%204%20facce.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/Bud%204%20facce.jpg">
+<img src="immagini_web/Bud%204%20facce_ts.jpg" loading="lazy" alt="MNG-018" onclick="apriZoom(this)" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-018">MNG-018</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-019" data-nome="Bud amaca.jpg" data-thumb="immagini_web/Bud%20amaca_ts.jpg" data-zoom="immagini_web/Bud%20amaca.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/Bud%20amaca.jpg">
+<img src="immagini_web/Bud%20amaca_ts.jpg" loading="lazy" alt="MNG-019" onclick="apriZoom(this)" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-019">MNG-019</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-020" data-nome="Bud Bana joe.jpg" data-thumb="immagini_web/Bud%20Bana%20joe_ts.jpg" data-zoom="immagini_web/Bud%20Bana%20joe.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/Bud%20Bana%20joe.jpg">
+<img src="immagini_web/Bud%20Bana%20joe_ts.jpg" loading="lazy" alt="MNG-020" onclick="apriZoom(this)" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-020">MNG-020</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-021" data-nome="Bud bombetta.jpg" data-thumb="immagini_web/Bud%20bombetta_ts.jpg" data-zoom="immagini_web/Bud%20bombetta.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/Bud%20bombetta.jpg">
+<img src="immagini_web/Bud%20bombetta_ts.jpg" loading="lazy" alt="MNG-021" onclick="apriZoom(this)" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-021">MNG-021</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-022" data-nome="Bud buldozer.jpg" data-thumb="immagini_web/Bud%20buldozer_ts.jpg" data-zoom="immagini_web/Bud%20buldozer.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/Bud%20buldozer.jpg">
+<img src="immagini_web/Bud%20buldozer_ts.jpg" loading="lazy" alt="MNG-022" onclick="apriZoom(this)" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-022">MNG-022</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-023" data-nome="Bud cavalli legends.jpg" data-thumb="immagini_web/Bud%20cavalli%20legends_ts.jpg" data-zoom="immagini_web/Bud%20cavalli%20legends.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/Bud%20cavalli%20legends.jpg">
+<img src="immagini_web/Bud%20cavalli%20legends_ts.jpg" loading="lazy" alt="MNG-023" onclick="apriZoom(this)" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-023">MNG-023</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-024" data-nome="Bud cazzotto X NERO.jpg" data-thumb="immagini_web/Bud%20cazzotto%20X%20NERO_ts.jpg" data-zoom="immagini_web/Bud%20cazzotto%20X%20NERO.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/Bud%20cazzotto%20X%20NERO.jpg">
+<img src="immagini_web/Bud%20cazzotto%20X%20NERO_ts.jpg" loading="lazy" alt="MNG-024" onclick="apriZoom(this)" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-024">MNG-024</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+</div>
+<div class="page">
+<div class="item" data-codice="MNG-025" data-nome="Bud cazzotto.jpg" data-thumb="immagini_web/Bud%20cazzotto_ts.jpg" data-zoom="immagini_web/Bud%20cazzotto.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/Bud%20cazzotto.jpg">
+<img src="immagini_web/Bud%20cazzotto_ts.jpg" loading="lazy" alt="MNG-025" onclick="apriZoom(this)" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-025">MNG-025</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-026" data-nome="Bud ippopotami.jpg" data-thumb="immagini_web/Bud%20ippopotami_ts.jpg" data-zoom="immagini_web/Bud%20ippopotami.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/Bud%20ippopotami.jpg">
+<img src="immagini_web/Bud%20ippopotami_ts.jpg" loading="lazy" alt="MNG-026" onclick="apriZoom(this)" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-026">MNG-026</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-027" data-nome="Bud legend bia.jpg" data-thumb="immagini_web/Bud%20legend%20bia_ts.jpg" data-zoom="immagini_web/Bud%20legend%20bia.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/Bud%20legend%20bia.jpg">
+<img src="immagini_web/Bud%20legend%20bia_ts.jpg" loading="lazy" alt="MNG-027" onclick="apriZoom(this)" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-027">MNG-027</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-028" data-nome="Bud pattini.jpg" data-thumb="immagini_web/Bud%20pattini_ts.jpg" data-zoom="immagini_web/Bud%20pattini.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/Bud%20pattini.jpg">
+<img src="immagini_web/Bud%20pattini_ts.jpg" loading="lazy" alt="MNG-028" onclick="apriZoom(this)" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-028">MNG-028</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-029" data-nome="Bud pistoleri.jpg" data-thumb="immagini_web/Bud%20pistoleri_ts.jpg" data-zoom="immagini_web/Bud%20pistoleri.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/Bud%20pistoleri.jpg">
+<img src="immagini_web/Bud%20pistoleri_ts.jpg" loading="lazy" alt="MNG-029" onclick="apriZoom(this)" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-029">MNG-029</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-030" data-nome="Bud road moto.jpg" data-thumb="immagini_web/Bud%20road%20moto_ts.jpg" data-zoom="immagini_web/Bud%20road%20moto.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/Bud%20road%20moto.jpg">
+<img src="immagini_web/Bud%20road%20moto_ts.jpg" loading="lazy" alt="MNG-030" onclick="apriZoom(this)" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-030">MNG-030</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-031" data-nome="Bud Terence pollo.jpg" data-thumb="immagini_web/Bud%20Terence%20pollo_ts.jpg" data-zoom="immagini_web/Bud%20Terence%20pollo.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/Bud%20Terence%20pollo.jpg">
+<img src="immagini_web/Bud%20Terence%20pollo_ts.jpg" loading="lazy" alt="MNG-031" onclick="apriZoom(this)" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-031">MNG-031</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-032" data-nome="bud the legend x scuri.jpg" data-thumb="immagini_web/bud%20the%20legend%20x%20scuri_ts.jpg" data-zoom="immagini_web/bud%20the%20legend%20x%20scuri.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/bud%20the%20legend%20x%20scuri.jpg">
+<img src="immagini_web/bud%20the%20legend%20x%20scuri_ts.jpg" loading="lazy" alt="MNG-032" onclick="apriZoom(this)" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-032">MNG-032</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-033" data-nome="Bud wanted.jpg" data-thumb="immagini_web/Bud%20wanted_ts.jpg" data-zoom="immagini_web/Bud%20wanted.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/Bud%20wanted.jpg">
+<img src="immagini_web/Bud%20wanted_ts.jpg" loading="lazy" alt="MNG-033" onclick="apriZoom(this)" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-033">MNG-033</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-034" data-nome="buongiorno un cazzo.jpg" data-thumb="immagini_web/buongiorno%20un%20cazzo_ts.jpg" data-zoom="immagini_web/buongiorno%20un%20cazzo.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/buongiorno%20un%20cazzo.jpg">
+<img src="immagini_web/buongiorno%20un%20cazzo_ts.jpg" loading="lazy" alt="MNG-034" onclick="apriZoom(this)" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-034">MNG-034</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-035" data-nome="CALBONI.jpg" data-thumb="immagini_web/CALBONI_ts.jpg" data-zoom="immagini_web/CALBONI.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/CALBONI.jpg">
+<img src="immagini_web/CALBONI_ts.jpg" loading="lazy" alt="MNG-035" onclick="apriZoom(this)" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-035">MNG-035</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-036" data-nome="CLINT.jpg" data-thumb="immagini_web/CLINT_ts.jpg" data-zoom="immagini_web/CLINT.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/CLINT.jpg">
+<img src="immagini_web/CLINT_ts.jpg" loading="lazy" alt="MNG-036" onclick="apriZoom(this)" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-036">MNG-036</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+</div>
+<div class="page">
+<div class="item" data-codice="MNG-037" data-nome="DEAD POOL RETTANGOLO.jpg" data-thumb="immagini_web/DEAD%20POOL%20RETTANGOLO_ts.jpg" data-zoom="immagini_web/DEAD%20POOL%20RETTANGOLO.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/DEAD%20POOL%20RETTANGOLO.jpg">
+<img src="immagini_web/DEAD%20POOL%20RETTANGOLO_ts.jpg" loading="lazy" alt="MNG-037" onclick="apriZoom(this)" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-037">MNG-037</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-038" data-nome="DUNE BUGGY.jpg" data-thumb="immagini_web/DUNE%20BUGGY_ts.jpg" data-zoom="immagini_web/DUNE%20BUGGY.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/DUNE%20BUGGY.jpg">
+<img src="immagini_web/DUNE%20BUGGY_ts.jpg" loading="lazy" alt="MNG-038" onclick="apriZoom(this)" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-038">MNG-038</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-039" data-nome="ELIO.jpg" data-thumb="immagini_web/ELIO_ts.jpg" data-zoom="immagini_web/ELIO.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/ELIO.jpg">
+<img src="immagini_web/ELIO_ts.jpg" loading="lazy" alt="MNG-039" onclick="apriZoom(this)" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-039">MNG-039</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-040" data-nome="ER MONNEZZA.jpg" data-thumb="immagini_web/ER%20MONNEZZA_ts.jpg" data-zoom="immagini_web/ER%20MONNEZZA.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/ER%20MONNEZZA.jpg">
+<img src="immagini_web/ER%20MONNEZZA_ts.jpg" loading="lazy" alt="MNG-040" onclick="apriZoom(this)" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-040">MNG-040</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-041" data-nome="ESERCIZI X WEEK END.jpg" data-thumb="immagini_web/ESERCIZI%20X%20WEEK%20END_ts.jpg" data-zoom="immagini_web/ESERCIZI%20X%20WEEK%20END.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/ESERCIZI%20X%20WEEK%20END.jpg">
+<img src="immagini_web/ESERCIZI%20X%20WEEK%20END_ts.jpg" loading="lazy" alt="MNG-041" onclick="apriZoom(this)" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-041">MNG-041</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-042" data-nome="gianni agnelli.jpg" data-thumb="immagini_web/gianni%20agnelli_ts.jpg" data-zoom="immagini_web/gianni%20agnelli.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/gianni%20agnelli.jpg">
+<img src="immagini_web/gianni%20agnelli_ts.jpg" loading="lazy" alt="MNG-042" onclick="apriZoom(this)" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-042">MNG-042</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-043" data-nome="gin tonic.jpg" data-thumb="immagini_web/gin%20tonic_ts.jpg" data-zoom="immagini_web/gin%20tonic.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/gin%20tonic.jpg">
+<img src="immagini_web/gin%20tonic_ts.jpg" loading="lazy" alt="MNG-043" onclick="apriZoom(this)" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-043">MNG-043</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-044" data-nome="goldrake.jpg" data-thumb="immagini_web/goldrake_ts.jpg" data-zoom="immagini_web/goldrake.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/goldrake.jpg">
+<img src="immagini_web/goldrake_ts.jpg" loading="lazy" alt="MNG-044" onclick="apriZoom(this)" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-044">MNG-044</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-045" data-nome="grattachecca.jpg" data-thumb="immagini_web/grattachecca_ts.jpg" data-zoom="immagini_web/grattachecca.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/grattachecca.jpg">
+<img src="immagini_web/grattachecca_ts.jpg" loading="lazy" alt="MNG-045" onclick="apriZoom(this)" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-045">MNG-045</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-046" data-nome="harry casate bia.jpg" data-thumb="immagini_web/harry%20casate%20bia_ts.jpg" data-zoom="immagini_web/harry%20casate%20bia.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/harry%20casate%20bia.jpg">
+<img src="immagini_web/harry%20casate%20bia_ts.jpg" loading="lazy" alt="MNG-046" onclick="apriZoom(this)" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-046">MNG-046</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-047" data-nome="HELL FIRE NERO.jpg" data-thumb="immagini_web/HELL%20FIRE%20NERO_ts.jpg" data-zoom="immagini_web/HELL%20FIRE%20NERO.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/HELL%20FIRE%20NERO.jpg">
+<img src="immagini_web/HELL%20FIRE%20NERO_ts.jpg" loading="lazy" alt="MNG-047" onclick="apriZoom(this)" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-047">MNG-047</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-048" data-nome="HELL FIRE.jpg" data-thumb="immagini_web/HELL%20FIRE_ts.jpg" data-zoom="immagini_web/HELL%20FIRE.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/HELL%20FIRE.jpg">
+<img src="immagini_web/HELL%20FIRE_ts.jpg" loading="lazy" alt="MNG-048" onclick="apriZoom(this)" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-048">MNG-048</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+</div>
+<div class="page">
+<div class="item" data-codice="MNG-049" data-nome="IL BUONO IL BRUTTO.jpg" data-thumb="immagini_web/IL%20BUONO%20IL%20BRUTTO_ts.jpg" data-zoom="immagini_web/IL%20BUONO%20IL%20BRUTTO.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/IL%20BUONO%20IL%20BRUTTO.jpg">
+<img src="immagini_web/IL%20BUONO%20IL%20BRUTTO_ts.jpg" loading="lazy" alt="MNG-049" onclick="apriZoom(this)" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-049">MNG-049</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-050" data-nome="intelligenza.jpg" data-thumb="immagini_web/intelligenza_ts.jpg" data-zoom="immagini_web/intelligenza.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/intelligenza.jpg">
+<img src="immagini_web/intelligenza_ts.jpg" loading="lazy" alt="MNG-050" onclick="apriZoom(this)" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-050">MNG-050</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-051" data-nome="it x nero.jpg" data-thumb="immagini_web/it%20x%20nero_ts.jpg" data-zoom="immagini_web/it%20x%20nero.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/it%20x%20nero.jpg">
+<img src="immagini_web/it%20x%20nero_ts.jpg" loading="lazy" alt="MNG-051" onclick="apriZoom(this)" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-051">MNG-051</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-052" data-nome="joker cena.jpg" data-thumb="immagini_web/joker%20cena_ts.jpg" data-zoom="immagini_web/joker%20cena.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/joker%20cena.jpg">
+<img src="immagini_web/joker%20cena_ts.jpg" loading="lazy" alt="MNG-052" onclick="apriZoom(this)" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-052">MNG-052</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-053" data-nome="joker nuovo film.jpg" data-thumb="immagini_web/joker%20nuovo%20film_ts.jpg" data-zoom="immagini_web/joker%20nuovo%20film.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/joker%20nuovo%20film.jpg">
+<img src="immagini_web/joker%20nuovo%20film_ts.jpg" loading="lazy" alt="MNG-053" onclick="apriZoom(this)" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-053">MNG-053</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-054" data-nome="joker why so bia.jpg" data-thumb="immagini_web/joker%20why%20so%20bia_ts.jpg" data-zoom="immagini_web/joker%20why%20so%20bia.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/joker%20why%20so%20bia.jpg">
+<img src="immagini_web/joker%20why%20so%20bia_ts.jpg" loading="lazy" alt="MNG-054" onclick="apriZoom(this)" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-054">MNG-054</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-055" data-nome="joker why so nero.jpg" data-thumb="immagini_web/joker%20why%20so%20nero_ts.jpg" data-zoom="immagini_web/joker%20why%20so%20nero.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/joker%20why%20so%20nero.jpg">
+<img src="immagini_web/joker%20why%20so%20nero_ts.jpg" loading="lazy" alt="MNG-055" onclick="apriZoom(this)" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-055">MNG-055</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-056" data-nome="KEN SHIRO GRUPPO NERO.jpg" data-thumb="immagini_web/KEN%20SHIRO%20GRUPPO%20NERO_ts.jpg" data-zoom="immagini_web/KEN%20SHIRO%20GRUPPO%20NERO.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/KEN%20SHIRO%20GRUPPO%20NERO.jpg">
+<img src="immagini_web/KEN%20SHIRO%20GRUPPO%20NERO_ts.jpg" loading="lazy" alt="MNG-056" onclick="apriZoom(this)" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-056">MNG-056</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-057" data-nome="KEN SHIRO RETTANGOLO X NERO.jpg" data-thumb="immagini_web/KEN%20SHIRO%20RETTANGOLO%20X%20NERO_ts.jpg" data-zoom="immagini_web/KEN%20SHIRO%20RETTANGOLO%20X%20NERO.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/KEN%20SHIRO%20RETTANGOLO%20X%20NERO.jpg">
+<img src="immagini_web/KEN%20SHIRO%20RETTANGOLO%20X%20NERO_ts.jpg" loading="lazy" alt="MNG-057" onclick="apriZoom(this)" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-057">MNG-057</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-058" data-nome="KEN SHIRO RETTANGOLO.jpg" data-thumb="immagini_web/KEN%20SHIRO%20RETTANGOLO_ts.jpg" data-zoom="immagini_web/KEN%20SHIRO%20RETTANGOLO.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/KEN%20SHIRO%20RETTANGOLO.jpg">
+<img src="immagini_web/KEN%20SHIRO%20RETTANGOLO_ts.jpg" loading="lazy" alt="MNG-058" onclick="apriZoom(this)" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-058">MNG-058</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-059" data-nome="LOS POLLOS.jpg" data-thumb="immagini_web/LOS%20POLLOS_ts.jpg" data-zoom="immagini_web/LOS%20POLLOS.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/LOS%20POLLOS.jpg">
+<img src="immagini_web/LOS%20POLLOS_ts.jpg" loading="lazy" alt="MNG-059" onclick="apriZoom(this)" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-059">MNG-059</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-060" data-nome="LUIGI FUNGO BIANCO.jpg" data-thumb="immagini_web/LUIGI%20FUNGO%20BIANCO_ts.jpg" data-zoom="immagini_web/LUIGI%20FUNGO%20BIANCO.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/LUIGI%20FUNGO%20BIANCO.jpg">
+<img src="immagini_web/LUIGI%20FUNGO%20BIANCO_ts.jpg" loading="lazy" alt="MNG-060" onclick="apriZoom(this)" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-060">MNG-060</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+</div>
+<div class="page">
+<div class="item" data-codice="MNG-061" data-nome="LUIGI FUNGO NERO.jpg" data-thumb="immagini_web/LUIGI%20FUNGO%20NERO_ts.jpg" data-zoom="immagini_web/LUIGI%20FUNGO%20NERO.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/LUIGI%20FUNGO%20NERO.jpg">
+<img src="immagini_web/LUIGI%20FUNGO%20NERO_ts.jpg" loading="lazy" alt="MNG-061" onclick="apriZoom(this)" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-061">MNG-061</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-062" data-nome="LUPIN GRUPPO.jpg" data-thumb="immagini_web/LUPIN%20GRUPPO_ts.jpg" data-zoom="immagini_web/LUPIN%20GRUPPO.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/LUPIN%20GRUPPO.jpg">
+<img src="immagini_web/LUPIN%20GRUPPO_ts.jpg" loading="lazy" alt="MNG-062" onclick="apriZoom(this)" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-062">MNG-062</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-063" data-nome="LUPIN GTA.jpg" data-thumb="immagini_web/LUPIN%20GTA_ts.jpg" data-zoom="immagini_web/LUPIN%20GTA.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/LUPIN%20GTA.jpg">
+<img src="immagini_web/LUPIN%20GTA_ts.jpg" loading="lazy" alt="MNG-063" onclick="apriZoom(this)" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-063">MNG-063</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-064" data-nome="lupin vespa.jpg" data-thumb="immagini_web/lupin%20vespa_ts.jpg" data-zoom="immagini_web/lupin%20vespa.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/lupin%20vespa.jpg">
+<img src="immagini_web/lupin%20vespa_ts.jpg" loading="lazy" alt="MNG-064" onclick="apriZoom(this)" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-064">MNG-064</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-065" data-nome="MANDALORIAN.jpg" data-thumb="immagini_web/MANDALORIAN_ts.jpg" data-zoom="immagini_web/MANDALORIAN.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/MANDALORIAN.jpg">
+<img src="immagini_web/MANDALORIAN_ts.jpg" loading="lazy" alt="MNG-065" onclick="apriZoom(this)" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-065">MNG-065</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-066" data-nome="MARIO FUNGO.jpg" data-thumb="immagini_web/MARIO%20FUNGO_ts.jpg" data-zoom="immagini_web/MARIO%20FUNGO.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/MARIO%20FUNGO.jpg">
+<img src="immagini_web/MARIO%20FUNGO_ts.jpg" loading="lazy" alt="MNG-066" onclick="apriZoom(this)" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-066">MNG-066</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-067" data-nome="MARVEL SCRITTA.jpg" data-thumb="immagini_web/MARVEL%20SCRITTA_ts.jpg" data-zoom="immagini_web/MARVEL%20SCRITTA.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/MARVEL%20SCRITTA.jpg">
+<img src="immagini_web/MARVEL%20SCRITTA_ts.jpg" loading="lazy" alt="MNG-067" onclick="apriZoom(this)" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-067">MNG-067</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-068" data-nome="MOJITO.jpg" data-thumb="immagini_web/MOJITO_ts.jpg" data-zoom="immagini_web/MOJITO.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/MOJITO.jpg">
+<img src="immagini_web/MOJITO_ts.jpg" loading="lazy" alt="MNG-068" onclick="apriZoom(this)" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-068">MNG-068</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-069" data-nome="MONACO CAR.jpg" data-thumb="immagini_web/MONACO%20CAR_ts.jpg" data-zoom="immagini_web/MONACO%20CAR.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/MONACO%20CAR.jpg">
+<img src="immagini_web/MONACO%20CAR_ts.jpg" loading="lazy" alt="MNG-069" onclick="apriZoom(this)" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-069">MNG-069</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-070" data-nome="MOTO GUZZI.jpg" data-thumb="immagini_web/MOTO%20GUZZI_ts.jpg" data-zoom="immagini_web/MOTO%20GUZZI.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/MOTO%20GUZZI.jpg">
+<img src="immagini_web/MOTO%20GUZZI_ts.jpg" loading="lazy" alt="MNG-070" onclick="apriZoom(this)" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-070">MNG-070</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-071" data-nome="MOTO LUCKY 7.jpg" data-thumb="immagini_web/MOTO%20LUCKY%207_ts.jpg" data-zoom="immagini_web/MOTO%20LUCKY%207.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/MOTO%20LUCKY%207.jpg">
+<img src="immagini_web/MOTO%20LUCKY%207_ts.jpg" loading="lazy" alt="MNG-071" onclick="apriZoom(this)" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-071">MNG-071</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-072" data-nome="MOTO ROUTE 66.jpg" data-thumb="immagini_web/MOTO%20ROUTE%2066_ts.jpg" data-zoom="immagini_web/MOTO%20ROUTE%2066.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/MOTO%20ROUTE%2066.jpg">
+<img src="immagini_web/MOTO%20ROUTE%2066_ts.jpg" loading="lazy" alt="MNG-072" onclick="apriZoom(this)" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-072">MNG-072</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+</div>
+<div class="page">
+<div class="item" data-codice="MNG-073" data-nome="NON STO ZITTO.jpg" data-thumb="immagini_web/NON%20STO%20ZITTO_ts.jpg" data-zoom="immagini_web/NON%20STO%20ZITTO.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/NON%20STO%20ZITTO.jpg">
+<img src="immagini_web/NON%20STO%20ZITTO_ts.jpg" loading="lazy" alt="MNG-073" onclick="apriZoom(this)" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-073">MNG-073</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-074" data-nome="padel bianco.jpg" data-thumb="immagini_web/padel%20bianco_ts.jpg" data-zoom="immagini_web/padel%20bianco.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/padel%20bianco.jpg">
+<img src="immagini_web/padel%20bianco_ts.jpg" loading="lazy" alt="MNG-074" onclick="apriZoom(this)" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-074">MNG-074</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-075" data-nome="padel x nero.jpg" data-thumb="immagini_web/padel%20x%20nero_ts.jpg" data-zoom="immagini_web/padel%20x%20nero.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/padel%20x%20nero.jpg">
+<img src="immagini_web/padel%20x%20nero_ts.jpg" loading="lazy" alt="MNG-075" onclick="apriZoom(this)" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-075">MNG-075</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-076" data-nome="papero choose violent.jpg" data-thumb="immagini_web/papero%20choose%20violent_ts.jpg" data-zoom="immagini_web/papero%20choose%20violent.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/papero%20choose%20violent.jpg">
+<img src="immagini_web/papero%20choose%20violent_ts.jpg" loading="lazy" alt="MNG-076" onclick="apriZoom(this)" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-076">MNG-076</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-077" data-nome="PAZZI X MARY.jpg" data-thumb="immagini_web/PAZZI%20X%20MARY_ts.jpg" data-zoom="immagini_web/PAZZI%20X%20MARY.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/PAZZI%20X%20MARY.jpg">
+<img src="immagini_web/PAZZI%20X%20MARY_ts.jpg" loading="lazy" alt="MNG-077" onclick="apriZoom(this)" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-077">MNG-077</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-078" data-nome="POVERO GABBIANO.jpg" data-thumb="immagini_web/POVERO%20GABBIANO_ts.jpg" data-zoom="immagini_web/POVERO%20GABBIANO.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/POVERO%20GABBIANO.jpg">
+<img src="immagini_web/POVERO%20GABBIANO_ts.jpg" loading="lazy" alt="MNG-078" onclick="apriZoom(this)" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-078">MNG-078</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-079" data-nome="POZZETTO.jpg" data-thumb="immagini_web/POZZETTO_ts.jpg" data-zoom="immagini_web/POZZETTO.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/POZZETTO.jpg">
+<img src="immagini_web/POZZETTO_ts.jpg" loading="lazy" alt="MNG-079" onclick="apriZoom(this)" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-079">MNG-079</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-080" data-nome="QUASI DEL TUTTO.jpg" data-thumb="immagini_web/QUASI%20DEL%20TUTTO_ts.jpg" data-zoom="immagini_web/QUASI%20DEL%20TUTTO.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/QUASI%20DEL%20TUTTO.jpg">
+<img src="immagini_web/QUASI%20DEL%20TUTTO_ts.jpg" loading="lazy" alt="MNG-080" onclick="apriZoom(this)" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-080">MNG-080</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-081" data-nome="rettangolo per catalogANCHE OGGI.jpg" data-thumb="immagini_web/rettangolo%20per%20catalogANCHE%20OGGI_ts.jpg" data-zoom="immagini_web/rettangolo%20per%20catalogANCHE%20OGGI.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/rettangolo%20per%20catalogANCHE%20OGGI.jpg">
+<img src="immagini_web/rettangolo%20per%20catalogANCHE%20OGGI_ts.jpg" loading="lazy" alt="MNG-081" onclick="apriZoom(this)" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-081">MNG-081</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-082" data-nome="RITORNO AL FUTURO.jpg" data-thumb="immagini_web/RITORNO%20AL%20FUTURO_ts.jpg" data-zoom="immagini_web/RITORNO%20AL%20FUTURO.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/RITORNO%20AL%20FUTURO.jpg">
+<img src="immagini_web/RITORNO%20AL%20FUTURO_ts.jpg" loading="lazy" alt="MNG-082" onclick="apriZoom(this)" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-082">MNG-082</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-083" data-nome="ROCKY PUGNO.jpg" data-thumb="immagini_web/ROCKY%20PUGNO_ts.jpg" data-zoom="immagini_web/ROCKY%20PUGNO.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/ROCKY%20PUGNO.jpg">
+<img src="immagini_web/ROCKY%20PUGNO_ts.jpg" loading="lazy" alt="MNG-083" onclick="apriZoom(this)" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-083">MNG-083</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-084" data-nome="senna.jpg" data-thumb="immagini_web/senna_ts.jpg" data-zoom="immagini_web/senna.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/senna.jpg">
+<img src="immagini_web/senna_ts.jpg" loading="lazy" alt="MNG-084" onclick="apriZoom(this)" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-084">MNG-084</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+</div>
+<div class="page">
+<div class="item" data-codice="MNG-085" data-nome="SINNER.jpg" data-thumb="immagini_web/SINNER_ts.jpg" data-zoom="immagini_web/SINNER.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/SINNER.jpg">
+<img src="immagini_web/SINNER_ts.jpg" loading="lazy" alt="MNG-085" onclick="apriZoom(this)" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-085">MNG-085</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-086" data-nome="skidibi x bianco.jpg" data-thumb="immagini_web/skidibi%20x%20bianco_ts.jpg" data-zoom="immagini_web/skidibi%20x%20bianco.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/skidibi%20x%20bianco.jpg">
+<img src="immagini_web/skidibi%20x%20bianco_ts.jpg" loading="lazy" alt="MNG-086" onclick="apriZoom(this)" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-086">MNG-086</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-087" data-nome="skidibi x nero.jpg" data-thumb="immagini_web/skidibi%20x%20nero_ts.jpg" data-zoom="immagini_web/skidibi%20x%20nero.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/skidibi%20x%20nero.jpg">
+<img src="immagini_web/skidibi%20x%20nero_ts.jpg" loading="lazy" alt="MNG-087" onclick="apriZoom(this)" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-087">MNG-087</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-088" data-nome="SPRITZ.jpg" data-thumb="immagini_web/SPRITZ_ts.jpg" data-zoom="immagini_web/SPRITZ.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/SPRITZ.jpg">
+<img src="immagini_web/SPRITZ_ts.jpg" loading="lazy" alt="MNG-088" onclick="apriZoom(this)" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-088">MNG-088</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-089" data-nome="STAR WAR FINESTRA.jpg" data-thumb="immagini_web/STAR%20WAR%20FINESTRA_ts.jpg" data-zoom="immagini_web/STAR%20WAR%20FINESTRA.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/STAR%20WAR%20FINESTRA.jpg">
+<img src="immagini_web/STAR%20WAR%20FINESTRA_ts.jpg" loading="lazy" alt="MNG-089" onclick="apriZoom(this)" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-089">MNG-089</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-090" data-nome="STAR WAR JEDI.jpg" data-thumb="immagini_web/STAR%20WAR%20JEDI_ts.jpg" data-zoom="immagini_web/STAR%20WAR%20JEDI.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/STAR%20WAR%20JEDI.jpg">
+<img src="immagini_web/STAR%20WAR%20JEDI_ts.jpg" loading="lazy" alt="MNG-090" onclick="apriZoom(this)" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-090">MNG-090</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-091" data-nome="STEVE MCQUEEN.jpg" data-thumb="immagini_web/STEVE%20MCQUEEN_ts.jpg" data-zoom="immagini_web/STEVE%20MCQUEEN.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/STEVE%20MCQUEEN.jpg">
+<img src="immagini_web/STEVE%20MCQUEEN_ts.jpg" loading="lazy" alt="MNG-091" onclick="apriZoom(this)" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-091">MNG-091</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-092" data-nome="STRANGER BICICLETTE.jpg" data-thumb="immagini_web/STRANGER%20BICICLETTE_ts.jpg" data-zoom="immagini_web/STRANGER%20BICICLETTE.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/STRANGER%20BICICLETTE.jpg">
+<img src="immagini_web/STRANGER%20BICICLETTE_ts.jpg" loading="lazy" alt="MNG-092" onclick="apriZoom(this)" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-092">MNG-092</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-093" data-nome="STRANGER GRUPPO 3 NERO.jpg" data-thumb="immagini_web/STRANGER%20GRUPPO%203%20NERO_ts.jpg" data-zoom="immagini_web/STRANGER%20GRUPPO%203%20NERO.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/STRANGER%20GRUPPO%203%20NERO.jpg">
+<img src="immagini_web/STRANGER%20GRUPPO%203%20NERO_ts.jpg" loading="lazy" alt="MNG-093" onclick="apriZoom(this)" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-093">MNG-093</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-094" data-nome="STRANGER GRUPPO 3.jpg" data-thumb="immagini_web/STRANGER%20GRUPPO%203_ts.jpg" data-zoom="immagini_web/STRANGER%20GRUPPO%203.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/STRANGER%20GRUPPO%203.jpg">
+<img src="immagini_web/STRANGER%20GRUPPO%203_ts.jpg" loading="lazy" alt="MNG-094" onclick="apriZoom(this)" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-094">MNG-094</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-095" data-nome="STRANGER LOGO BIA.jpg" data-thumb="immagini_web/STRANGER%20LOGO%20BIA_ts.jpg" data-zoom="immagini_web/STRANGER%20LOGO%20BIA.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/STRANGER%20LOGO%20BIA.jpg">
+<img src="immagini_web/STRANGER%20LOGO%20BIA_ts.jpg" loading="lazy" alt="MNG-095" onclick="apriZoom(this)" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-095">MNG-095</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-096" data-nome="STRANGER LOGO NERO.jpg" data-thumb="immagini_web/STRANGER%20LOGO%20NERO_ts.jpg" data-zoom="immagini_web/STRANGER%20LOGO%20NERO.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/STRANGER%20LOGO%20NERO.jpg">
+<img src="immagini_web/STRANGER%20LOGO%20NERO_ts.jpg" loading="lazy" alt="MNG-096" onclick="apriZoom(this)" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-096">MNG-096</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+</div>
+<div class="page">
+<div class="item" data-codice="MNG-097" data-nome="TERZA MEDIA.jpg" data-thumb="immagini_web/TERZA%20MEDIA_ts.jpg" data-zoom="immagini_web/TERZA%20MEDIA.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/TERZA%20MEDIA.jpg">
+<img src="immagini_web/TERZA%20MEDIA_ts.jpg" loading="lazy" alt="MNG-097" onclick="apriZoom(this)" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-097">MNG-097</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-098" data-nome="TEX CAVALLO.jpg" data-thumb="immagini_web/TEX%20CAVALLO_ts.jpg" data-zoom="immagini_web/TEX%20CAVALLO.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/TEX%20CAVALLO.jpg">
+<img src="immagini_web/TEX%20CAVALLO_ts.jpg" loading="lazy" alt="MNG-098" onclick="apriZoom(this)" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-098">MNG-098</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-099" data-nome="TEX MONTAGNA.jpg" data-thumb="immagini_web/TEX%20MONTAGNA_ts.jpg" data-zoom="immagini_web/TEX%20MONTAGNA.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/TEX%20MONTAGNA.jpg">
+<img src="immagini_web/TEX%20MONTAGNA_ts.jpg" loading="lazy" alt="MNG-099" onclick="apriZoom(this)" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-099">MNG-099</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-100" data-nome="UBRIACO.jpg" data-thumb="immagini_web/UBRIACO_ts.jpg" data-zoom="immagini_web/UBRIACO.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/UBRIACO.jpg">
+<img src="immagini_web/UBRIACO_ts.jpg" loading="lazy" alt="MNG-100" onclick="apriZoom(this)" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-100">MNG-100</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-101" data-nome="VENOM BIA.jpg" data-thumb="immagini_web/VENOM%20BIA_ts.jpg" data-zoom="immagini_web/VENOM%20BIA.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/VENOM%20BIA.jpg">
+<img src="immagini_web/VENOM%20BIA_ts.jpg" loading="lazy" alt="MNG-101" onclick="apriZoom(this)" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-101">MNG-101</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-102" data-nome="VENOM NERO.jpg" data-thumb="immagini_web/VENOM%20NERO_ts.jpg" data-zoom="immagini_web/VENOM%20NERO.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/VENOM%20NERO.jpg">
+<img src="immagini_web/VENOM%20NERO_ts.jpg" loading="lazy" alt="MNG-102" onclick="apriZoom(this)" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-102">MNG-102</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-103" data-nome="VESPA CARTOLINA.jpg" data-thumb="immagini_web/VESPA%20CARTOLINA_ts.jpg" data-zoom="immagini_web/VESPA%20CARTOLINA.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/VESPA%20CARTOLINA.jpg">
+<img src="immagini_web/VESPA%20CARTOLINA_ts.jpg" loading="lazy" alt="MNG-103" onclick="apriZoom(this)" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-103">MNG-103</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-104" data-nome="VESPA ITALIAN NERO.jpg" data-thumb="immagini_web/VESPA%20ITALIAN%20NERO_ts.jpg" data-zoom="immagini_web/VESPA%20ITALIAN%20NERO.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/VESPA%20ITALIAN%20NERO.jpg">
+<img src="immagini_web/VESPA%20ITALIAN%20NERO_ts.jpg" loading="lazy" alt="MNG-104" onclick="apriZoom(this)" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-104">MNG-104</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-105" data-nome="VESPA ITALIAN.jpg" data-thumb="immagini_web/VESPA%20ITALIAN_ts.jpg" data-zoom="immagini_web/VESPA%20ITALIAN.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/VESPA%20ITALIAN.jpg">
+<img src="immagini_web/VESPA%20ITALIAN_ts.jpg" loading="lazy" alt="MNG-105" onclick="apriZoom(this)" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-105">MNG-105</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-106" data-nome="viv l&#x27;amore.jpg" data-thumb="immagini_web/viv%20l%27amore_ts.jpg" data-zoom="immagini_web/viv%20l%27amore.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/viv%20l%27amore.jpg">
+<img src="immagini_web/viv%20l%27amore_ts.jpg" loading="lazy" alt="MNG-106" onclick="apriZoom(this)" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-106">MNG-106</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+<div class="item" data-codice="MNG-107" data-nome="YATTAMAN.jpg" data-thumb="immagini_web/YATTAMAN_ts.jpg" data-zoom="immagini_web/YATTAMAN.jpg" data-url="https://Annalisabetti.github.io/adulto/immagini_web/YATTAMAN.jpg">
+<img src="immagini_web/YATTAMAN_ts.jpg" loading="lazy" alt="MNG-107" onclick="apriZoom(this)" title="Clicca per vedere in grande">
+<div class="info-box">
+<span class="code" title="MNG-107">MNG-107</span>
+<button class="btn-seleziona" onclick="toggleSeleziona(this)">Scegli</button>
+</div>
+</div>
+</div>
+<div class="floating-bar">
+<div>Scelte: <span id="counter">0</span></div>
+<button onclick="apriCarrello()">Vedi &amp; Invia</button>
+</div>
+<div id="modalCarrello" class="modal-carrello" onclick="chiudiCarrelloFuori(event)">
+<div class="modal-content">
+<div class="modal-header">
+<h3>La tua Selezione</h3>
+<button onclick="chiudiCarrello()" style="background:none;border:none;font-size:18px;cursor:pointer;">X</button>
+</div>
+<div class="cart-items-list" id="cartList"></div>
+<button onclick="inviaWhatsApp()" style="background:#25d366;color:white;border:none;padding:12px;border-radius:8px;font-weight:bold;font-size:14px;cursor:pointer;width:100%;">Invia Lista su WhatsApp</button>
+</div>
+</div>
+<div id="lightbox" class="lightbox-modal" onclick="chiudiZoom()">
+<img id="lightbox-img" src="" alt="Zoom Grafica">
+</div>
+<script>
+let selezione = [];
+
+function aggiornaContatore() {
+    document.getElementById('counter').innerText = selezione.length;
+}
+
+function toggleSeleziona(btn) {
+    const item = btn.closest('.item');
+    const codice = item.dataset.codice;
+    const index = selezione.findIndex(i => i.codice === codice);
+    if (index > -1) {
+        selezione.splice(index, 1);
+        btn.classList.remove('selezionato');
+        btn.innerText = "Scegli";
+    } else {
+        selezione.push({
+            codice: codice,
+            nome: item.dataset.nome,
+            thumb: item.dataset.thumb,
+            urlPubblico: item.dataset.url
+        });
+        btn.classList.add('selezionato');
+        btn.innerText = "Scelto";
+    }
+    aggiornaContatore();
+}
+
+function apriCarrello() {
+    const lista = document.getElementById('cartList');
+    lista.innerHTML = '';
+    if (selezione.length === 0) {
+        const vuoto = document.createElement('p');
+        vuoto.style.cssText = 'text-align:center;color:#777;padding:20px;';
+        vuoto.textContent = 'Nessun articolo selezionato.';
+        lista.appendChild(vuoto);
+    } else {
+        selezione.forEach(item => {
+            // Costruito con il DOM: nomi file con apici, & o < non rompono la pagina.
+            const riga = document.createElement('div');
+            riga.className = 'cart-item';
+            const img = document.createElement('img');
+            img.src = item.thumb;
+            img.alt = item.codice;
+            const info = document.createElement('div');
+            info.className = 'cart-item-info';
+            const c = document.createElement('div');
+            c.textContent = item.codice;
+            const n = document.createElement('div');
+            n.style.cssText = 'font-size:9px;color:#666;';
+            n.textContent = item.nome;
+            info.append(c, n);
+            const del = document.createElement('button');
+            del.className = 'cart-item-remove';
+            del.textContent = 'Elimina';
+            del.onclick = () => rimuoviElemento(item.codice);
+            riga.append(img, info, del);
+            lista.appendChild(riga);
+        });
+    }
+    document.getElementById('modalCarrello').style.display = 'flex';
+}
+
+function chiudiCarrello() { document.getElementById('modalCarrello').style.display = 'none'; }
+function chiudiCarrelloFuori(ev) { if (ev.target.id === 'modalCarrello') chiudiCarrello(); }
+
+function rimuoviElemento(codice) {
+    selezione = selezione.filter(i => i.codice !== codice);
+    aggiornaContatore();
+    document.querySelectorAll('.item').forEach(el => {
+        if (el.dataset.codice === codice) {
+            const btn = el.querySelector('.btn-seleziona');
+            btn.classList.remove('selezionato');
+            btn.innerText = "Scegli";
+        }
+    });
+    apriCarrello();
+}
+
+function inviaWhatsApp() {
+    if (selezione.length === 0) {
+        alert("Seleziona almeno un articolo prima di inviare!");
+        return;
+    }
+    let testo = "Ciao! Vorrei ordinare questi articoli:\n";
+    selezione.forEach(item => {
+        testo += "\n- " + item.codice + " (" + item.nome + ")\n  -> " + item.urlPubblico + "\n";
+    });
+    const numero = "393331234567";
+    // encodeURIComponent: nomi con &, #, % o accenti non troncano piu' il messaggio.
+    window.open("https://wa.me/" + numero + "?text=" + encodeURIComponent(testo), "_blank");
+}
+
+function apriZoom(imgEl) {
+    const src = imgEl.closest('.item').dataset.zoom;
+    document.getElementById("lightbox-img").src = src;
+    document.getElementById("lightbox").style.display = "flex";
+}
+function chiudiZoom() { document.getElementById("lightbox").style.display = "none"; }
+</script>
+</body>
+</html>
